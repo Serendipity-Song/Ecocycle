@@ -1,6 +1,7 @@
 package com.ecobyte.ecocycle.domain.user;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -35,8 +36,11 @@ public class User {
     @Column(nullable = false)
     private String email;
 
-    @Column(nullable = false)
-    private Integer stamps;
+    @Embedded
+    private Stamp stamp;
+
+    @Column
+    private Integer tree;
 
     @Enumerated(EnumType.STRING)
     private Role role;
@@ -50,7 +54,8 @@ public class User {
         this.name = name;
         this.nickname = nickname;
         this.email = email;
-        this.stamps = 0;
+        this.stamp = new Stamp(0);
+        this.tree = 0;
         this.role = role;
     }
 
@@ -60,5 +65,13 @@ public class User {
 
     public boolean isSameId(final Long userId) {
         return id.equals(userId);
+    }
+
+    public void addStamps(final Integer stamps) {
+        if (stamp.isFull(stamps)) {
+            tree++;
+        }
+
+        stamp.add(stamps);
     }
 }

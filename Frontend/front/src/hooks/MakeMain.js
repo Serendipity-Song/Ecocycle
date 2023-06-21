@@ -1,9 +1,5 @@
-import { getUserInfo } from '../api/apis.js'
-
 
 const makeMain = () => {
-
-    getUserInfo();
 
     const getStateOfTree = () => {
 

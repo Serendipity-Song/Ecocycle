@@ -27,4 +27,17 @@ class UserTest {
         assertThat(user.isAdmin()).isFalse();
     }
 
+
+    @DisplayName("사용자의 Stamp를 증가시킨다(tree 생성)")
+    @Test
+    void addStamp_makeTree() {
+        // given
+        final User user = new User("azpi", "azpi", "azpi@email.com", Role.USER);
+
+        // when
+        user.addStamps(Stamp.LIMIT_MAX);
+
+        // then
+        assertThat(user.getTree()).isEqualTo(1);
+    }
 }

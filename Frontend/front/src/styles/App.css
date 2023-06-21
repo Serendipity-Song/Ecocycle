@@ -13,12 +13,26 @@
     font-style: normal;
 }
 
-body {
+body{
     text-align: center;
 }
 
 section {
     text-align: center;
+}
+
+#loading_page {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: #ffffffb7;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .user_btn {
@@ -30,6 +44,39 @@ section {
     border-radius: 33px;
     cursor: pointer;
     border: none;
+}
+
+.small_user_btn {
+    margin: 20px 10px;
+    padding: 10px 15px;
+    font-size: 17px;
+    font-family: 'NanumSquareRoundOTF';
+    color: #F5F5F5;
+    background-color: #B2C9BD;
+    border-radius: 33px;
+    cursor: pointer;
+    border: none;
+}
+
+.quiz_btn {
+    padding: 10px 40px;
+    margin: 10px;
+    font-size: 30px;
+    font-family: 'NanumSquareRoundOTF';
+    font-weight: 600;
+    color: #597164;
+    background-color: #B2C9BD;
+    border-radius: 33px;
+    cursor: pointer;
+    border: none;
+}
+
+#login_footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    height: 100px;
+    width: 100%;
 }
 
 .uploadImage_label {
@@ -57,22 +104,31 @@ section {
     margin-bottom: 30px;
 }
 
-.line {
+.top_line {
     color: #B2C9BD;
     border: 3px solid #B2C9BD;
     margin-top: 80px;
     margin-bottom: 30px;
 }
 
-input [type="text"] {
+.bottom_line {
+    color: #B2C9BD;
+    border: 3px solid #B2C9BD;
+}
+
+input[type="text"] {
     width: 200px;
-    height: 50px;
+    height: 70px;
     /* font-size: 15px; */
     font-family: 'NanumSquareRoundOTF';
     border: none;
     border-radius: 15px;
     padding-left: 10px;
     background-color: #F5F5F5;
+}
+
+input:focus {
+    outline: none;
 }
 
 .box {
@@ -88,11 +144,17 @@ input [type="text"] {
 .modal_text {
     font-family: 'NanumSquareRoundOTF';
     color: #F5F5F5;
+    word-break: break-all;
+    padding: 10px 10px;
 }
 
 #logo_img {
     margin-top: 130px;
     margin-bottom: 50px;
+}
+
+#mypage_logo {
+    margin-top: 80px;
 }
 
 #login_btn {
@@ -102,10 +164,12 @@ input [type="text"] {
 
 
 #copyright_img {
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
 #copyright2_img {
+    margin-top: 12px;
     margin-bottom: 30px;
 }
 
@@ -170,8 +234,12 @@ input [type="text"] {
     width: 300px;
 }
 
+#wrapper {
+    min-height: calc(100vh - 90px);
+}
+
 #report_footer {
-    margin-top: 200px;
+    height: 70px;
 }
 
 #upload_btn {
@@ -184,58 +252,149 @@ input [type="text"] {
     margin-bottom: 60px;
 }
 
-#productInfo_Modal {
+.modal {
     position: absolute;
     top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* width: 400px; */
     overflow-y: auto;
-    /* background-color: white; */
 }
 
-.modalClose_btn{
+.quiz_modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: auto;
+}
+
+.modalClose_btn {
     position: absolute;
     top: 10px;
     right: 10px;
     font-size: 22px;
     color: #597164;
-    background-color: #A9C2B3;
+    background-color: transparent;
     border: none;
 
 }
 
-.modal_text{
-    margin: 0px 20px;
-}
-
-#title_text{
+#title_text {
     font-size: 20px;
 
 }
 
-#name_text{
+#name_text {
     font-size: 22px;
     color: #597164;
     font-weight: bold;
 }
 
-#producInfo_text {
-    font-size: 18px;
+.productName_div {
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.productInfo_text {
+    font-size: 20px;
+    padding: 0px 10px;
 }
 
 #productInfoModal_span {
     background-color: #A9C2B3;
     border-radius: 33px;
-    width: 300px;
-    height: 220px;
+    width: 320px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: auto;
 }
 
-#tip_text{
+.tip_text {
     font-family: 'Dovemayo_gothic';
-    font-size: 20px;
+    font-size: 18px;
     color: #597164;
+    padding: 10px 10px;
+}
+
+#goReportModal_span {
+    background-color: #FFFFFF;
+    border-radius: 33px;
+    width: 300px;
+    padding: 32px 15px;
+
+    border-style: solid;
+    border-width: 5px;
+    border-color: #B2CABD;
+}
+
+#product_info {
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+.dailyQuizModal_div {
+    background-color: #E6EFEA;
+    border-radius: 33px;
+    width: 300px;
+}
+
+.quiz_title {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-family: 'Dovemayo_gothic';
+    font-size: 32px;
+    color: #597164;
+}
+
+#quiz_info {
+    padding: 10px 15px;
+}
+
+.quiz_content {
+    font-family: 'Dovemayo_gothic';
+    font-size: 24px;
+    color: #597164;
+    padding-bottom: 40px;
+}
+
+.quiz_tip {
+    font-family: 'Dovemayo_gothic';
+    font-size: 18px;
+    color: #597164;
+}
+
+.quiz_span {
+    padding: 30px
+}
+
+.result_btn {
+    margin: 10px auto;
+    padding: 10px 15px;
+    font-size: 17px;
+    font-family: 'NanumSquareRoundOTF';
+    color: #597164;
+    background-color: #F5F5F5; 
+    border-radius: 33px;
+    cursor: pointer;
+    border: none;
+}
+
+#stamp {
+    width: 300px;
+}
+
+#mypage_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+#grade_img {
+    width: 150px;
+}
+
+#total_stamp {
+    margin: 20px 0px;
 }

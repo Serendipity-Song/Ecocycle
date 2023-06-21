@@ -55,6 +55,12 @@ public class DailyQuiz {
     }
 
     public void updateAnswer(final boolean isRight) {
+        if (isRight) {
+            user.addStamps(7);
+        } else {
+            user.addStamps(3);
+        }
+
         this.isRight = isRight;
     }
 }

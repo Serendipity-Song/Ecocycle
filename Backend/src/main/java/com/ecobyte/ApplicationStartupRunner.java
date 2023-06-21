@@ -1,4 +1,4 @@
-package com.ecobyte.ecocycle;
+package com.ecobyte;
 
 import com.ecobyte.ecocycle.domain.user.Role;
 import com.ecobyte.ecocycle.domain.user.User;

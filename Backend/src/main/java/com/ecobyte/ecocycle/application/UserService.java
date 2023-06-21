@@ -27,6 +27,6 @@ public class UserService {
                 .orElseThrow(UserNotFoundException::new);
 
         final boolean alreadyDailyQuiz = dailyQuizRepository.existsByUserIdAndAttendanceDate(loginId, LocalDate.now());
-        return new MainPageResponse(loginUser.getNickname(), loginUser.getStamps(), alreadyDailyQuiz);
+        return new MainPageResponse(loginUser.getNickname(), loginUser.getStamp().getStamps(), alreadyDailyQuiz);
     }
 }

@@ -12,14 +12,14 @@ const Login = () => {
 
     return (
         <div>
-            <hr className="line" />
             <main>
+                <hr className="top_line" />
                 <section>
                     <img id="logo_img" src="assets/logo.png" alt="EcoCycle logo" /> <br />
                     <button className="user_btn" id="login_btn" onClick={() => { window.location.href = loginUrl }}>Google로 로그인</button>
                 </section>
-                <footer>
-                    <hr className="line" />
+                <footer id='login_footer'>
+                    <hr className="bottom_line" />
                     <img id="copyright_img" src="assets/copyright.png" alt="Copyright by EcoByte" />
                 </footer>
             </main>

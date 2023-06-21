@@ -9,10 +9,6 @@ import lombok.NoArgsConstructor;
 @Getter
 public class DataClassificationResponse {
 
-    @JsonProperty("name")
+    @JsonProperty("productName")
     private String productName;
-
-    public DataClassificationResponse(final String productName) {
-        this.productName = productName;
-    }
 }

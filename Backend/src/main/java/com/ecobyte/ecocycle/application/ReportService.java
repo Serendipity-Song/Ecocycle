@@ -32,6 +32,7 @@ public class ReportService {
         final Report report = new Report(request.getProductName(), request.getImageUrl(), loginUser,
                 LocalDateTime.now());
         final Report savedReport = reportRepository.save(report);
+        loginUser.addStamps(7);
         return new SavedReportResponse(savedReport.getId());
     }
 

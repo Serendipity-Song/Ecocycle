@@ -1,4 +1,4 @@
-package com.ecobyte.ecocycle;
+package com.ecobyte;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

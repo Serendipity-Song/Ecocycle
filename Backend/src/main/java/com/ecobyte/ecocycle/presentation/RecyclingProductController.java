@@ -3,6 +3,7 @@ package com.ecobyte.ecocycle.presentation;
 import com.ecobyte.ecocycle.application.RecyclingProductService;
 import com.ecobyte.ecocycle.application.auth.AdminAuthorization;
 import com.ecobyte.ecocycle.dto.request.RecyclingProductRequest;
+import com.ecobyte.ecocycle.dto.response.ClassifiedProductsResponse;
 import com.ecobyte.ecocycle.dto.response.RecyclingProductResponse;
 import com.ecobyte.ecocycle.presentation.auth.AuthorizationPrincipal;
 import com.ecobyte.ecocycle.presentation.auth.LoginAuthorization;
@@ -34,7 +35,8 @@ public class RecyclingProductController {
     }
 
     @GetMapping
-    public ResponseEntity<RecyclingProductResponse> classify(@RequestParam("url") final String imageUrl) {
-        return ResponseEntity.ok(recyclingProductService.classify(imageUrl));
+    public ResponseEntity<ClassifiedProductsResponse> classify(@AuthorizationPrincipal final Long loginId,
+                                                               @RequestParam("url") final String imageUrl) {
+        return ResponseEntity.ok(recyclingProductService.classify(loginId, imageUrl));
     }
 }

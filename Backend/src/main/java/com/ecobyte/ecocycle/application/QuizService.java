@@ -42,6 +42,7 @@ public class QuizService {
         return QuizResponse.from(savedQuiz);
     }
 
+    @Transactional
     public DailyQuizResponse giveDailyQuiz(final Long loginId) {
         final LocalDate currentDate = LocalDate.now();
         checkDailyQuizAlreadyDid(loginId, currentDate);
