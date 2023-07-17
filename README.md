@@ -7,6 +7,7 @@
 
 재활용품의 사진을 첨부하면 어떤 재활용이며, 어떻게 재활용 하면 되는 지 안내해주는프로그램 “EcoCycle”
 
+ 
 <img width="231" alt="image" src="https://github.com/EcoByte-Ecocycle/Ecocycle/assets/88193038/ae607ab9-99b1-4c2a-b63a-799098c4ed87.png">
 <img width="230" alt="image" src="https://github.com/EcoByte-Ecocycle/Ecocycle/assets/88193038/4b93de97-5965-423b-a730-9c50b578b0ca.png">
 <img width="231" alt="image" src="https://github.com/EcoByte-Ecocycle/Ecocycle/assets/88193038/0b25d582-e295-4d65-85c8-9e916436383d.png">
